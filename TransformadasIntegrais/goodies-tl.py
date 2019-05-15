@@ -291,10 +291,10 @@ for index, f in enumerate (lfiles):
                 break
         if (pos == -1):
             print("file %s not found in listOfContents" % f)
-            raise
+#            raise #comentando linha - Fabio
         if (pos == 0):
             text = text.replace('#Previous#',('%s' % "main.html"))
-        else:
+        if (pos > 0) :
             text = text.replace('#Previous#',('%s' % listOfContents[pos-1][1]))
 
         text = text.replace('#TableOfContents#',('main.html#%s.html' %f))
